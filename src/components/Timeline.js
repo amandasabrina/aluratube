@@ -45,7 +45,7 @@ export const StyledTimeline = styled.div`
   }
 `;
 
-export default function Timeline(props) {
+export default function Timeline({ searchValue, ...props }) {
   // console.log('Dentro do timeline: ', props.playlists);
   const playlistNames = Object.keys(props.playlists);
 
@@ -57,14 +57,20 @@ export default function Timeline(props) {
           <section key={playlistName}>
             <h2>{playlistName}</h2>
             <div>
-              {videos.map((video) => {
-                return (
-                  <a key={video.id} href={video.url}>
-                    <img src={video.thumb} />
-                    <span>{video.title}</span>
-                  </a>
-                );
-              })}
+              {videos
+                .filter((video) => {
+                  const titleNormalized = video.title.toLowerCase();
+                  const searchValueNormalized = searchValue.toLowerCase();
+                  return titleNormalized.includes(searchValueNormalized);
+                })
+                .map((video) => {
+                  return (
+                    <a key={video.id} href={video.url}>
+                      <img src={video.thumb} />
+                      <span>{video.title}</span>
+                    </a>
+                  );
+                })}
             </div>
           </section>
         );

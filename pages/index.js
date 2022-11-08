@@ -1,10 +1,11 @@
+import React from 'react';
 import config from '../config.json';
 import styled from 'styled-components';
+
 import { CSSReset } from '../src/components/CSSReset';
 import Menu from '../src/components/Menu';
 import Timeline from '../src/components/Timeline';
 import Header from '../src/components/Header';
-import Banner from '../src/components/Banner';
 import Favorites from '../src/components/Favorites';
 
 export const StyledHomePage = styled.div`
@@ -16,14 +17,19 @@ export const StyledHomePage = styled.div`
 
 function HomePage() {
   // console.log(config.playlists);
+
+  const [valorDoFiltro, setValorDoFiltro] = React.useState('');
+
   return (
     <>
       <CSSReset />
       <StyledHomePage>
-        <Menu />
-        <Banner />
+        {/* Prop Drilling (vc vai perfurando a aplicação passando as propriedades ali) */}
+        <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
         <Header config={config} />
-        <Timeline playlists={config.playlists}>Oi</Timeline>
+        <Timeline searchValue={valorDoFiltro} playlists={config.playlists}>
+          Oi
+        </Timeline>
         <Favorites config={config} />
       </StyledHomePage>
     </>
