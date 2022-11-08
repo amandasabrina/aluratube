@@ -1,18 +1,28 @@
 import styled from 'styled-components';
 
 const StyledHeader = styled.div`
+  width: 100vw;
   img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
   }
-  .user-info {
-    /* margin-top: 50px; */
+  section.user-info {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    width: 100%;
     padding: 16px 32px;
     gap: 16px;
+  }
+  @media (max-width: 580px) {
+    section.user-info {
+      max-width: 300px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 6px;
+    }
   }
 `;
 

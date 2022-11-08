@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import ToggleButton from '../ToggleButton';
 import Search from './components/Search';
 
 const StyledMenu = styled.header`
@@ -6,8 +7,10 @@ const StyledMenu = styled.header`
   flex-direction: row;
   height: 56px;
   justify-content: space-between;
-  background-color: ${({ theme }) => theme.backgroundLevel1 || '#FFFFFF'};
-  border: 1px solid ${({ theme }) => theme.borderBase || '#e5e5e5'};
+  /* background-color: ${({ theme }) => theme.backgroundLevel1 || '#fafafa'}; */
+  /* border: 1px solid ${({ theme }) => theme.borderBase || '#e5e5e5'}; */
+  background-color: ${({ theme }) => theme.header || '#fafafa'};
+  border: 1px solid ${({ theme }) => theme.border || '#e5e5e5'};
   align-items: center;
   padding: 0 16px;
   gap: 16px;
@@ -20,18 +23,38 @@ const StyledMenu = styled.header`
       max-width: 127px;
     }
     .text {
-      fill: ${({ theme }) => theme.textColorBase || '#222222'};
+      /* fill: ${({ theme }) => theme.textColorBase || '#222222'}; */
+      fill: ${({ theme }) => theme.text || '#363537'};
     }
+  }
+  .containerToggleSearch {
+    display: flex;
+    gap: 10px;
+    flex: 0.8;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+
+  @media (max-width: 580px) {
+    height: 90px;
+    flex-direction: column;
+    padding-bottom: 10px;
+    padding-top: 5px;
   }
 `;
 
-export default function Menu({ valorDoFiltro, setValorDoFiltro }) {
+export default function Menu({ valorDoFiltro, setValorDoFiltro, themeToggler, theme }) {
   return (
     <StyledMenu>
       <div>
         <Logo />
       </div>
-      <Search valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
+      <div className="containerToggleSearch">
+        <ToggleButton themeToggler={themeToggler} theme={theme} />
+        <Search valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
+      </div>
     </StyledMenu>
   );
 }

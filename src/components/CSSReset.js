@@ -27,6 +27,7 @@ export const CSSReset = createGlobalStyle`
   /* Globals */
   button,
   a {
+    color: inherit;
     text-decoration: none;
     opacity: 1;
     transition: .3s;
