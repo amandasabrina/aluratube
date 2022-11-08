@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const StyledHeader = styled.div`
-  width: 100vw;
   img {
     width: 80px;
     height: 80px;
@@ -14,7 +13,7 @@ const StyledHeader = styled.div`
     padding: 16px 32px;
     gap: 16px;
   }
-  @media (max-width: 580px) {
+  @media (max-width: 480px) {
     section.user-info {
       max-width: 300px;
       margin: auto;

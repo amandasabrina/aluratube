@@ -26,11 +26,25 @@ export const StyledFavorites = styled.div`
     display: flex;
     align-items: center;
     gap: 20px;
+    overflow: auto;
   }
   .favorites {
     display: flex;
     align-items: center;
     flex-direction: column;
+  }
+  @media (max-width: 600px) {
+    .containerFavorites {
+      max-width: 300px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 380px) {
+    .containerFavorites {
+      grid-template-columns: 1fr;
+    }
   }
 `;
 

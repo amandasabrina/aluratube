@@ -37,7 +37,7 @@ const StyledMenu = styled.header`
   -webkit-transition: 0.4s;
   transition: 0.4s;
 
-  @media (max-width: 580px) {
+  @media (max-width: 480px) {
     height: 90px;
     flex-direction: column;
     padding-bottom: 10px;
