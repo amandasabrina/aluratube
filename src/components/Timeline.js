@@ -5,6 +5,10 @@ export const StyledTimeline = styled.div`
   width: 100%;
   padding: 16px;
   overflow: hidden;
+  background-color: ${({ theme }) => theme.backgroundBase || '#fafafa'};
+  color: ${({ theme }) => theme.textColorBase || '#222222'};
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   h2 {
     font-size: 16px;
     margin-bottom: 16px;

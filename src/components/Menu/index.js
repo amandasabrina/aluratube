@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ToggleButton from '../ToggleButton';
+import ToggleButton from './components/ToggleButton';
 import Search from './components/Search';
 
 const StyledMenu = styled.header`
@@ -7,10 +7,8 @@ const StyledMenu = styled.header`
   flex-direction: row;
   height: 56px;
   justify-content: space-between;
-  /* background-color: ${({ theme }) => theme.backgroundLevel1 || '#fafafa'}; */
-  /* border: 1px solid ${({ theme }) => theme.borderBase || '#e5e5e5'}; */
-  background-color: ${({ theme }) => theme.header || '#fafafa'};
-  border: 1px solid ${({ theme }) => theme.border || '#e5e5e5'};
+  background-color: ${({ theme }) => theme.backgroundLevel1 || '#fafafa'};
+  border: 1px solid ${({ theme }) => theme.borderBase || '#e5e5e5'};
   align-items: center;
   padding: 0 16px;
   gap: 16px;
@@ -23,8 +21,7 @@ const StyledMenu = styled.header`
       max-width: 127px;
     }
     .text {
-      /* fill: ${({ theme }) => theme.textColorBase || '#222222'}; */
-      fill: ${({ theme }) => theme.text || '#363537'};
+      fill: ${({ theme }) => theme.textColorBase || '#222222'};
     }
   }
   .containerToggleSearch {

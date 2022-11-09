@@ -1,4 +1,7 @@
+import React from 'react';
 import styled from 'styled-components';
+
+import { ColorModeContext } from '../../../contexts/ColorContext';
 import { MdOutlineDarkMode } from 'react-icons/md';
 import { MdOutlineBrightnessLow } from 'react-icons/md';
 
@@ -6,7 +9,7 @@ export const StyledToggleButton = styled.div`
   display: flex;
   align-items: center;
   /* The switch - the box around the slider */
-  .switch {
+  label.switch {
     background-color: inherit;
     border: none;
     background-color: inherit;
@@ -17,35 +20,35 @@ export const StyledToggleButton = styled.div`
   }
 
   /* Hide default HTML checkbox */
-  .switch input {
+  label.switch input {
     opacity: 0;
     width: 0;
     height: 0;
   }
 
   /* The slider */
-  .slider {
+  span.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    /* background-color: #ccc; */
-    border: 1px solid ${({ theme }) => theme.border};
+    background-color: ${({ theme }) => theme.backgroundBase || '#181818'};
+    border: 1px solid ${({ theme }) => theme.borderBase};
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
 
-  .slider:before {
+  span.slider:before {
     position: absolute;
     content: '';
     height: 26px;
     width: 26px;
     left: 4px;
     bottom: 4px;
-    /* background-color: white; */
-    background-color: #dbd5d5;
+    /* cor bolinha */
+    background-color: ${({ theme }) => theme.borderBase};
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
@@ -66,38 +69,49 @@ export const StyledToggleButton = styled.div`
     transition: 0.4s;
   }
 
-  input:checked + .slider {
-    background-color: #5e5c5c;
+  input:checked + span.slider {
+    background-color: ${({ theme }) => theme.backgroundBase || '#181818'};
   }
 
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196f3;
+  input:focus + span.slider {
+    box-shadow: 0 0 1px ${({ theme }) => theme.backgroundBase || '#181818'};
   }
 
-  input:checked + .slider:before {
+  input:checked + span.slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
   }
 
   /* Rounded sliders */
-  .slider.round {
+  span.slider.round {
     border-radius: 34px;
   }
 
-  .slider.round:before {
+  span.slider.round:before {
     border-radius: 50%;
+  }
+
+  svg {
+    color: ${({ theme }) => theme.textColorBase || '#222222'};
   }
 `;
 
-export default function ToggleButton({ themeToggler, theme }) {
+export default function ToggleButton() {
+  const colorContext = React.useContext(ColorModeContext);
+
   return (
     <>
       <StyledToggleButton>
         <label className="switch">
-          <input type="checkbox" onClick={themeToggler} />
+          <input
+            type="checkbox"
+            onClick={() => {
+              colorContext.themeToggler();
+            }}
+          />
           <span className="slider round">
-            {theme === 'light' ? <MdOutlineDarkMode className="darkMode" /> : <MdOutlineBrightnessLow className="lightMode" />}
+            {colorContext.theme === 'light' ? <MdOutlineDarkMode className="darkMode" /> : <MdOutlineBrightnessLow className="lightMode" />}
           </span>
         </label>
       </StyledToggleButton>

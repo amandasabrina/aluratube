@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
 const StyledHeader = styled.div`
+  background-color: ${({ theme }) => theme.backgroundLevel1 || '#fafafa'};
+  color: ${({ theme }) => theme.textColorBase || '#222222'};
   z-index: 1;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   img {
     width: 80px;
     height: 80px;

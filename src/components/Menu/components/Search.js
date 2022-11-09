@@ -4,8 +4,7 @@ import { MdSearch } from 'react-icons/md';
 const StyledSearch = styled.div`
   display: flex;
   flex-direction: row;
-  /* border: 1px solid ${({ theme }) => theme.borderBase}; */
-  border: 1px solid ${({ theme }) => theme.border};
+  border: 1px solid ${({ theme }) => theme.borderBase};
   max-width: 425px;
   width: 100%;
   border-radius: 2px;
@@ -16,18 +15,15 @@ const StyledSearch = styled.div`
     padding: 4px 6px;
     border: none;
     outline: none;
-    /* color: ${({ theme }) => theme.textColorBase};
-    background-color: ${({ theme }) => theme.backgroundBase}; */
-    color: ${({ theme }) => theme.searchText};
-    background-color: ${({ theme }) => theme.searchBg};
+    color: ${({ theme }) => theme.textColorBase || '#222222'};
+    background-color: ${({ theme }) => theme.backgroundBase || '#181818'};
   }
   button {
     flex: 1;
     cursor: pointer;
     border: none;
-    /* background-color: ${({ theme }) => theme.backgroundLevel2}; */
-    background-color: ${({ theme }) => theme.searchBg};
-    border-left: 1px solid ${({ theme }) => theme.border};
+    background-color: ${({ theme }) => theme.backgroundLevel2};
+    border-left: 1px solid ${({ theme }) => theme.borderBase};
     box-shadow: 0 1px 0 rgb(0 0 0 / 10%);
     width: 40px;
     height: 40px;
@@ -35,6 +31,9 @@ const StyledSearch = styled.div`
       width: 64px;
       height: 40px;
     }
+  }
+  svg {
+    color: ${({ theme }) => theme.textColorBase || '#222222'};
   }
   button > *:hover {
     color: inherit;
