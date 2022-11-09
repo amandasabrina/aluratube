@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const StyledHeader = styled.div`
+  z-index: 1;
   img {
     width: 80px;
     height: 80px;
