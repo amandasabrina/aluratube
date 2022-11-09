@@ -31,8 +31,8 @@ const StyledMenu = styled.header`
     align-items: center;
     justify-content: flex-end;
   }
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 
   @media (max-width: 480px) {
     height: 90px;
