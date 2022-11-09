@@ -36,8 +36,8 @@ export const StyledToggleButton = styled.div`
     bottom: 0;
     background-color: ${({ theme }) => theme.backgroundBase || '#181818'};
     border: 1px solid ${({ theme }) => theme.borderBase};
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
   }
 
   span.slider:before {
@@ -49,24 +49,24 @@ export const StyledToggleButton = styled.div`
     bottom: 4px;
     /* cor bolinha */
     background-color: ${({ theme }) => theme.borderBase};
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
   }
 
   .darkMode {
     position: absolute;
     left: 35px;
     bottom: 8px;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
   }
 
   .lightMode {
     position: absolute;
     left: 8px;
     bottom: 8px;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
   }
 
   input:checked + span.slider {
