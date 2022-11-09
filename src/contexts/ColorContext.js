@@ -8,9 +8,7 @@ export const ColorModeContext = React.createContext({
 
 export const ColorModeStorageProvider = (props) => {
   // const [theme, setTheme] = React.useState(props.initialMode);
-
   const [theme, setTheme] = React.useState(props.children.props.pageProps.user_theme);
-
   // console.log('tema ficou com: ', theme);
 
   const themeToggler = () => {

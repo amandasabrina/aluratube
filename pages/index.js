@@ -7,7 +7,7 @@ import Timeline from '../src/components/Timeline';
 import Header from '../src/components/Header';
 import Favorites from '../src/components/Favorites';
 
-import { parseCookies, setCookie } from 'nookies';
+import { parseCookies } from 'nookies';
 
 export const StyledHomePage = styled.div`
   display: 'flex';

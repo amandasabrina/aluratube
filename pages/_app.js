@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head';
 
 import { GlobalStyles } from '../src/components/globalStyles';
@@ -6,7 +6,6 @@ import { ColorModeStorageProvider, ColorModeContext } from '../src/contexts/Colo
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from '../src/components/Themes';
 import { CSSReset } from '../src/components/CSSReset';
-import { setCookie } from 'nookies';
 
 // _app.js -> Definições globais do NextJS
 // Provider -> Uma estrutura global que "amarra" a aplicação. Ele prove pra aplicação
