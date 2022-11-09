@@ -52,7 +52,7 @@ export async function getServerSideProps(context) {
   const cookies = parseCookies(context);
   return {
     props: {
-      user_theme: cookies.user_theme || 'light',
+      user_theme: cookies.user_theme || null,
     },
   };
 }
