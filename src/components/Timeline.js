@@ -7,8 +7,8 @@ export const StyledTimeline = styled.div`
   overflow: hidden;
   background-color: ${({ theme }) => theme.backgroundBase || '#fafafa'};
   color: ${({ theme }) => theme.textColorBase || '#222222'};
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   h2 {
     font-size: 16px;
     margin-bottom: 16px;

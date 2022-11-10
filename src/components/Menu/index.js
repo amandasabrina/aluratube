@@ -20,6 +20,7 @@ const StyledMenu = styled.header`
     @media (min-width: 600px) {
       max-width: 127px;
     }
+    height: 20px;
     .text {
       fill: ${({ theme }) => theme.textColorBase || '#222222'};
     }
@@ -31,8 +32,8 @@ const StyledMenu = styled.header`
     align-items: center;
     justify-content: flex-end;
   }
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 
   @media (max-width: 480px) {
     height: 90px;

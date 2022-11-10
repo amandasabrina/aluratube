@@ -4,8 +4,8 @@ const StyledHeader = styled.div`
   background-color: ${({ theme }) => theme.backgroundLevel1 || '#fafafa'};
   color: ${({ theme }) => theme.textColorBase || '#222222'};
   z-index: 1;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   img {
     width: 80px;
     height: 80px;

@@ -7,8 +7,8 @@ export const StyledFavorites = styled.div`
   overflow: hidden;
   background-color: ${({ theme }) => theme.backgroundBase || '#fafafa'};
   color: ${({ theme }) => theme.textColorBase || '#222222'};
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   section {
     width: 100%;
     padding: 0;

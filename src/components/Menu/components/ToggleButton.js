@@ -111,7 +111,7 @@ export default function ToggleButton() {
             }}
           />
           <span className="slider round">
-            {colorContext.theme === 'light' ? <MdOutlineDarkMode className="darkMode" /> : <MdOutlineBrightnessLow className="lightMode" />}
+            {colorContext.theme === 'light' ? <MdOutlineBrightnessLow className="lightMode" /> : <MdOutlineDarkMode className="darkMode" />}
           </span>
         </label>
       </StyledToggleButton>
