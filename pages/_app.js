@@ -7,6 +7,8 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from '../src/components/Themes';
 import { CSSReset } from '../src/components/CSSReset';
 
+import RegisterVideo from '../src/components/RegisterVideo';
+
 // _app.js -> Definições globais do NextJS
 // Provider -> Uma estrutura global que "amarra" a aplicação. Ele prove pra aplicação
 // Contexto -> Ele guarda infos pra aplicação. Quem tiver acesso ao contexto, tem acesso ao que ta guardado
@@ -32,6 +34,7 @@ function MyApp({ Component, pageProps }) {
         <CSSReset />
         <GlobalStyles />
         <Component {...pageProps} />
+        <RegisterVideo />
       </ThemeProvider>
     </>
   );

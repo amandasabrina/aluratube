@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styled from 'styled-components';
 
 export const StyledFavorites = styled.div`
@@ -63,7 +64,8 @@ export default function Favorites({ config }) {
           {favorites.map((favorite) => {
             return (
               <a href={`https://github.com/${favorite.github}`} className="favorites" key={favorite.id} target="_blank">
-                <img src={`https://github.com/${favorite.github}.png`} />
+                <Image src={`https://github.com/${favorite.github}.png`} width={500} height={500} alt="Imagens dos perfis do github" />
+                {/* <img src={`https://github.com/${favorite.github}.png`} /> */}
                 <p>@{favorite.github}</p>
               </a>
             );

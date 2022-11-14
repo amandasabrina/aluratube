@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledRegisterVideo = styled.div`
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   .add-video {
     width: 50px;
     height: 50px;
@@ -46,6 +48,7 @@ export const StyledRegisterVideo = styled.div`
     z-index: 100;
     display: flex;
     justify-content: center;
+    /* \/ a primeira div dentro do form */
     & > div {
       flex: 1;
       border-radius: 8px;
@@ -56,6 +59,8 @@ export const StyledRegisterVideo = styled.div`
       position: relative;
       padding: 16px;
       padding-top: 40px;
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
     }
   }
   input {

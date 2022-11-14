@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import ToggleButton from './components/ToggleButton';
 import Search from './components/Search';
+import Image from 'next/image';
 
 const StyledMenu = styled.header`
   display: flex;
@@ -14,13 +15,14 @@ const StyledMenu = styled.header`
   gap: 16px;
   position: fixed;
   width: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   .logo {
     width: 100%;
     max-width: 80px;
     @media (min-width: 600px) {
       max-width: 127px;
     }
-    height: 20px;
     .text {
       fill: ${({ theme }) => theme.textColorBase || '#222222'};
     }
@@ -40,6 +42,7 @@ const StyledMenu = styled.header`
     flex-direction: column;
     padding-bottom: 10px;
     padding-top: 5px;
+    gap: 3px;
   }
 `;
 
@@ -47,7 +50,8 @@ export default function Menu({ valorDoFiltro, setValorDoFiltro, themeToggler, th
   return (
     <StyledMenu>
       <div>
-        <Logo />
+        {/* <Logo /> */}
+        <Image src="/logo-aluratube.svg" height={30} width={90} alt="Logo AluraTube" />
       </div>
       <div className="containerToggleSearch">
         <ToggleButton themeToggler={themeToggler} theme={theme} />

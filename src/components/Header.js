@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styled from 'styled-components';
 
 const StyledHeader = styled.div`
@@ -50,7 +51,8 @@ export default function Header({ config }) {
       {/* <img src="banner" alt="" /> */}
 
       <section className="user-info">
-        <img src={`https://github.com/${config.github}.png`} alt="" />
+        <Image src={`https://github.com/${config.github}.png`} width={500} height={500} alt="Imagem de perfil do GitHub" />
+        {/* <img src={`https://github.com/${config.github}.png`} alt="" /> */}
         <div>
           <h2>{config.name}</h2>
           <p>{config.job}</p>

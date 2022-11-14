@@ -8,6 +8,8 @@ import { MdOutlineBrightnessLow } from 'react-icons/md';
 export const StyledToggleButton = styled.div`
   display: flex;
   align-items: center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   /* The switch - the box around the slider */
   label.switch {
     background-color: inherit;
